@@ -24,8 +24,9 @@ def camel_case(user_string):
     # Return the new sentence
     return new_sentence
 
+
 # Asks user to input a sentence
-user_input = input("Enter a sentence ")
+user_input = input("Enter a sentence\n")
 # Function call and save to a new string
 joined_string = camel_case(user_input)
 # Output
