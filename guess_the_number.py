@@ -31,31 +31,30 @@ def check_guess(guess, secret):
 
 
 def main():
-
+    # initializes the guess number counter
     number_of_guesses = 0
     (low, high) = configure_range()
     secret = generate_secret(low, high)
-
-    while True:
-
-        guess = get_guess()
-        result = check_guess(guess, secret)
-        number_of_guesses += 1
-        print(result)
-
-        if result == correct:
-            break
-
+    # loop to run the program until user chooses to quit
+    while 1:
         try:
+            # Get user input
             guess = get_guess()
+            # check guess
             result = check_guess(guess, secret)
+            # increment guess
+            number_of_guesses += 1
+            # display result
             print(result)
-
             if result == correct:
-                break
+                # display number of guesses
+                print("It took you " + str(number_of_guesses) + " guesses")
+                # if user wants to play again
+                play_again_question = input("Would you like to play again? (Y/N)")
+                if play_again_question == "N" or play_again_question == "n":
+                    quit()
         except ValueError:
             print("Error. Please enter a number.")
-
 
 
 if __name__ == '__main__':
