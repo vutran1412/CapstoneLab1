@@ -25,9 +25,24 @@ def camel_case(user_string):
     return new_sentence
 
 
-# Asks user to input a sentence
-user_input = input("Enter a sentence\n")
-# Function call and save to a new string
-joined_string = camel_case(user_input)
-# Output
-print(joined_string)
+def display_banner():
+
+    '''Display program name in a banner'''
+
+    msg = 'AWESOME camelCaseGenerator PROGRAM'
+
+    stars = '*' * len(msg)
+
+    print('\n', stars, '\n', msg, '\n',  stars, '\n')
+
+
+def main():
+    # Asks user to input a sentence
+    user_input = input("Enter a sentence\n")
+    # Function call and save to a new string
+    joined_string = camel_case(user_input)
+    # Output
+    print(joined_string)
+
+
+main()
