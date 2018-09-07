@@ -37,6 +37,7 @@ def main():
     secret = generate_secret(low, high)
 
     while True:
+
         guess = get_guess()
         result = check_guess(guess, secret)
         number_of_guesses += 1
@@ -44,6 +45,17 @@ def main():
 
         if result == correct:
             break
+
+        try:
+            guess = get_guess()
+            result = check_guess(guess, secret)
+            print(result)
+
+            if result == correct:
+                break
+        except ValueError:
+            print("Error. Please enter a number.")
+
 
 
 if __name__ == '__main__':
